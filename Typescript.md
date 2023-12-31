@@ -16,7 +16,7 @@
     Ans:
     Certainly! A basic TypeScript program can be created by writing code in a .ts file and compiled to JavaScript using the TypeScript compiler (tsc). For example:
     TypeScript code (app.ts):
-
+    ```typescript
     const message: string = 'Hello, TypeScript!';
     console.log(message);
     Command to compile:
@@ -28,6 +28,7 @@ This generates a JavaScript file (app.js) that can be executed using Node.js.
 5. Discuss the basic data types in TypeScript and provide examples of each.
     Ans:
     Basic types include number, string, boolean, null, undefined, object, and array. Examples:
+    ```typescript
     let num: number = 10;
     let str: string = 'Hello';
     let bool: boolean = true;
@@ -38,14 +39,14 @@ This generates a JavaScript file (app.js) that can be executed using Node.js.
 6. Explain the concept of optional and literal types in TypeScript.
     Ans:
     Optional types allow variables to accept undefined or the specified type. Literal types restrict variables to a specific value. Example:
-
+    ```typescript
     let optionalVar: number | undefined;
     let literalVar: 'red' | 'blue' | 'green';
 ## Functions in TypeScript:
 7. Describe the syntax differences between defining functions in JavaScript and TypeScript.
     Ans:
     TypeScript allows annotating parameters and return types, enabling static typing. Example:
-
+    ```typescript
     function add(a: number, b: number): number {
         return a + b;
     }
@@ -56,7 +57,7 @@ This generates a JavaScript file (app.js) that can be executed using Node.js.
 9. Explain the use of spread and rest operators in TypeScript with examples.
     Ans:
     The spread operator (...) expands an array or object into individual elements, while the rest operator collects multiple elements into an array. Examples:
-
+    ```typescript
     const arr1: number[] = [1, 2, 3];
     const arr2: number[] = [...arr1, 4, 5]; // Spread operator
 
@@ -66,19 +67,19 @@ This generates a JavaScript file (app.js) that can be executed using Node.js.
 10. How do you use destructuring in TypeScript, and what advantages does it offer?
     Ans:
     Destructuring allows extracting values from arrays or objects into variables. It offers concise syntax and simplifies working with complex data structures. Example:
-
+    ```typescript
     const person = { name: 'John', age: 30 };
     const { name, age } = person;
 11. Discuss the purpose and implementation of type aliases in TypeScript.
     Ans:
     Type aliases create custom names for types, making code more readable and maintainable. Example:
-
+    ```typescript
     type UserID = string | number;
     let id: UserID = 'user123';
 12. What are union and intersection types in TypeScript? Provide examples of their usage.
     Ans:
     Union types (|) allow a variable to hold values of multiple types, while intersection types (&) combine multiple types. Examples:
-
+    ```typescript
     type NumOrStr = number | string; // Union type
     type Employee = { id: number; name: string } & { department: string }; // Intersection type
 ## Error Handling and Operators:
