@@ -98,3 +98,106 @@ This generates a JavaScript file (app.js) that can be executed using Node.js.
 16. Can you describe scenarios where TypeScript's features significantly enhance code quality and maintainability?
     Ans:
     TypeScript's features shine in scenarios where a large codebase needs better organization, when working with multiple developers, and in projects where catching errors at compile-time is crucial to reduce runtime issues.
+
+
+# Type Assertion, Type Narrowing, and Generics:
+1. Explain the difference between type assertion and type casting in TypeScript.
+    Answer: Type assertion is a way to tell the compiler about the type of a variable, while type casting refers to converting one type to another in other languages like C#. In TypeScript, type assertion uses the as keyword or angle brackets < > to inform the compiler about a specific type, but it doesn't perform any runtime checking or transformations.
+2. How does type narrowing work in TypeScript? Provide examples.
+    Answer: Type narrowing allows narrowing down the type of a variable within a conditional block based on checks like type guards (typeof, instanceof, etc.) or truthiness checks. For example:
+   ```typescript
+    function printValue(value: string | number) {
+        if (typeof value === 'string') {
+            console.log(value.toUpperCase());
+        } else {
+            console.log(value.toFixed(2));
+        }
+    }
+3. What are the key differences between interfaces and types in TypeScript? When would you choose one over the other?
+    Answer: Interfaces and types in TypeScript are similar but have some differences. Interfaces are mainly used for defining object shapes and can be extended or implemented, while types are more flexible and can define union types, intersection types, and more complex structures. You might choose interfaces for defining object shapes and contracts while using types for broader type definitions.
+4. What are generics in TypeScript, and why are they beneficial in writing reusable code?
+    Answer: Generics allow writing flexible and reusable components, functions, or classes by letting types be specified later. They provide better type safety, enable writing more adaptable code, and avoid code duplication by allowing different types to be used in a single component.
+    Advanced Generics and Constraints:
+5. How do you use generics with interfaces in TypeScript? Provide an example.
+    Answer: Generics can be applied to interfaces to create reusable interfaces that can work with different types. Example:
+    ```typescript
+    interface Box<T> {
+        value: T;
+    }
+    let numberBox: Box<number> = { value: 10 };
+6. Explain how you can create functions with generics. What advantages does it offer?
+    Answer: Functions with generics allow writing functions that can work with different types, enhancing reusability and type safety. Example:
+    ```typescript
+    function identity<T>(arg: T): T {
+        return arg;
+    }
+    let result = identity<string>('Hello');
+7. Describe constraints in TypeScript generics and why they are used.
+    Answer: Constraints in generics restrict the types that can be used in a generic component. They ensure that only specified types that meet certain criteria can be used, enhancing type safety and avoiding unexpected behaviors.
+8. Illustrate the usage of the keyof constraint in TypeScript.
+    Answer: The keyof constraint in TypeScript allows working with keys of an object type. It produces a union type of all the keys in the specified object type. Example:
+    ```typescript
+    interface Person {
+        name: string;
+        age: number;
+        address: string;
+    }
+    type PersonKeys = keyof Person; // PersonKeys is 'name' | 'age' | 'address'
+## Asynchronous Programming and Advanced Types:
+9. How do you handle asynchronous operations in TypeScript? Discuss async/await and Promises.
+    Answer: Asynchronous operations in TypeScript can be handled using async/await syntax for cleaner asynchronous code or by using Promises to manage asynchronous tasks and handle results or errors.
+10. Explain conditional types in TypeScript and where they might be useful in practical scenarios.
+    Answer: Conditional types allow creating types based on conditions. They are useful in scenarios where types need to be determined dynamically based on specific conditions or constraints, providing flexibility in typing.
+11. Describe the concept of mapped types in TypeScript and how they can be applied.
+    Answer: Mapped types in TypeScript allow transforming one type into another by iterating over the keys in an existing type. They can create new types based on existing ones, often used to create read-only or optional versions of types.
+12. What are utility types in TypeScript? Can you provide examples of commonly used utility types?
+    Answer: Utility types in TypeScript are predefined generic types that provide commonly needed functionality for working with types. Examples include 
+    ```typescript
+    Partial<T>, Pick<T, K>, Record<K, T>, Readonly<T>, etc.
+## Application and Practical Usage:
+13. When would you prefer using conditional types over other types of type definitions in TypeScript?
+    Answer: Conditional types are preferable when types need to be determined dynamically based on specific conditions or when creating flexible, reusable types that depend on certain conditions or constraints.
+14. Illustrate how you might use mapped types to create a new type based on an existing type in a real-world scenario.
+    Answer: For instance, mapping a type to create a read-only version:
+    ```typescript
+    interface Product {
+        name: string;
+        price: number;
+    }
+    type ReadonlyProduct = Readonly<Product>;
+15. Discuss scenarios where utility types such as Partial, Pick, or Record would be most helpful in TypeScript development.
+    Answer:
+    ```typescript
+    Partial<T>: Useful when you need to make all properties of a type optional.
+    Pick<T, K>: Handy for creating new types by picking specific properties from an existing type.
+    Record<K, T>: Helpful for creating a type with specific keys and a corresponding value type.    
+
+# Introduction to OOP:
+1. What is Object-Oriented Programming (OOP), and what are its core principles?
+    Answer: OOP is a programming paradigm centered around objects that encapsulate data and behavior. Its core principles include encapsulation, inheritance, polymorphism, and abstraction.
+## Class and Object:
+2. Explain the difference between a class and an object in OOP.
+    Answer: A class is a blueprint/template that defines the properties and behaviors common to a set of objects. An object is an instance of a class, representing a specific entity with its own set of properties and behaviors.
+## Inheritance:
+3. How does inheritance work in OOP, and what are its benefits?
+    Answer: Inheritance allows a new class (subclass/derived class) to inherit properties and behaviors from another class (superclass/base class). Benefits include code reuse, extensibility, and hierarchical organization of classes.
+## Type Guards and Access Modifiers:
+4. Explain the use of type guards in TypeScript, specifically using typeof, in, and instanceof.
+    Answer: Type guards like typeof and instanceof help narrow down types, ensuring safer operations. typeof checks the type of a variable, instanceof checks if an object is an instance of a particular class, and in checks if a property exists in an object.
+5. What are access modifiers in OOP, and how do they control access to class members?
+    Answer: Access modifiers (e.g., public, private, protected) dictate the visibility of class members. public allows access from anywhere, private restricts access only within the class, and protected allows access within the class and its subclasses.
+## Getters, Setters, and Statics:
+6. Explain the usage and purpose of getters and setters in OOP.
+    Answer: Getters and setters are methods used to retrieve and assign values to private properties, allowing controlled access and manipulation of class fields.
+7. What are static methods or properties in OOP? How are they different from instance methods/properties?
+    Answer: Static methods/properties belong to the class itself rather than instances. They're accessed using the class name and are shared among all instances, unlike instance methods/properties which are specific to each object.
+## Polymorphism, Abstraction, and Encapsulation:
+8. Describe polymorphism in OOP and provide examples of its implementation.
+    Answer: Polymorphism allows objects of different classes to be treated as objects of a common superclass. Examples include method overriding and method overloading.
+9. What is abstraction in OOP, and why is it essential?
+ ** Answer: Abstraction focuses on hiding unnecessary implementation details while showcasing only essential features. It simplifies complex systems by displaying only relevant information to the user.
+10. Explain encapsulation in OOP and its significance.
+vbnet
+    **
+    ```typescript
+    - **Answer:** Encapsulation involves bundling the data and methods that o
