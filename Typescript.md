@@ -1,10 +1,11 @@
 ## Introduction to TypeScript:
 1. What is TypeScript, and how does it differ from JavaScript?
-    Ans:
+   
+    ```markdown
     TypeScript is a superset of JavaScript developed by Microsoft. It adds optional static typing, enhanced tooling, and better code organization features. TypeScript code needs to be transpiled into JavaScript to run in browsers.
 
 2. Explain the advantages of using TypeScript over plain JavaScript.
-    Ans:
+   ```markdown
     TypeScript offers benefits such as type checking, improved IDE support, better tooling for larger projects, increased code maintainability, early error detection, and improved readability through type annotations.
 
 ### TypeScript Setup and Basics:
@@ -85,6 +86,7 @@ This generates a JavaScript file (app.js) that can be executed using Node.js.
 ## Error Handling and Operators:
 13. Explain the usage of the ternary operator, optional chaining, and nullish coalescing in TypeScript.
     Ans:
+
     The ternary operator (condition ? expr1 : expr2) provides a concise way of writing conditional statements. Optional chaining (?.) allows safely accessing properties of possibly undefined/null values. Nullish coalescing (??) returns the right-hand operand if the left-hand operand is null or undefined, otherwise, it returns the left-hand operand.
 14. Discuss the differences between never, unknown, and nullable types in TypeScript.
     Ans:
